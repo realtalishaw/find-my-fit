@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-findmyfit-dev-134413-authRole",
+      "UnauthRoleArn": "arn:aws:iam::438420706355:role/amplify-findmyfit-dev-134413-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::438420706355:role/amplify-findmyfit-dev-134413-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-findmyfit-dev-134413-deployment",
+      "UnauthRoleName": "amplify-findmyfit-dev-134413-unauthRole",
+      "StackName": "amplify-findmyfit-dev-134413",
+      "StackId": "arn:aws:cloudformation:us-east-1:438420706355:stack/amplify-findmyfit-dev-134413/c993e370-6d14-11ee-8fa7-1279e81109c3",
+      "AmplifyAppId": "d351x58yfmani5"
+    }
+  }
+}
