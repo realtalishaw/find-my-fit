@@ -13,7 +13,16 @@
     },
     "categories": {
       "function": {
-        "jsrecommendations": {}
+        "jsrecommendations": {},
+        "findmyfitedb747e5": {
+          "deploymentBucketName": "amplify-findmyfit-dev-134413-deployment",
+          "s3Key": "amplify-builds/findmyfitedb747e5-4b30496b363345374e37-build.zip"
+        }
+      },
+      "api": {
+        "findmyfit": {},
+        "sizeapi": {},
+        "api9be5c04d": {}
       }
     }
   }

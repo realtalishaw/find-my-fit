@@ -1,5 +1,19 @@
 {
   "api": {
+    "api9be5c04d": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "findmyfitedb747e5"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "findmyfit": {
       "dependsOn": [],
       "output": {
@@ -20,6 +34,37 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    },
+    "sizeapi": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "findmyfitedb747e5": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_findmyfitedb747e5_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "findmyfitedb747e5"
+        }
+      ]
+    },
+    "AMPLIFY_function_findmyfitedb747e5_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "findmyfitedb747e5"
+        }
+      ]
     }
   }
 }

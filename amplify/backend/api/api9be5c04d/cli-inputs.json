@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/size-recommendation": {
+      "name": "/size-recommendation",
+      "lambdaFunction": "findmyfitedb747e5",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
