@@ -1,3 +1,23 @@
+type SilhouetteEase @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  silhouettepropetiesID: ID! @index(name: "bySilhouettePropeties")
+  easeProperty: String!
+  easeAmount: String!
+}
+
+type SilhouettePropeties @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  silhouette: String!
+  SilhouetteEases: [SilhouetteEase] @hasMany(indexName: "bySilhouettePropeties", fields: ["id"])
+}
+
+type FabricProperties @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  fabricName: String!
+  elasticity: String
+  bounce: String
+}
+
 type Recommendation @model @auth(rules: [{allow: public}]) {
   id: ID!
   userID: ID! @index(name: "byUser")
@@ -56,3 +76,4 @@ type Measurements @model @auth(rules: [{allow: public}]) {
   height: String
   weight: String
 }
+ 

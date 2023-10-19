@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/recommendations": {
+      "name": "/recommendations",
+      "lambdaFunction": "jsrecommendations",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
