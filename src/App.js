@@ -1,38 +1,23 @@
-import React, { useState } from 'react';
-import HomePage from './Components/HomeScreen';
-import BodyMeasurements from './Components/BodyMeasurements'; 
-import AdditionalQuestions from './Components/AdditionalQuestions';
-import EmailCapture from './Components/EmailCapture'; 
-import Results from './Components/Results';
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MultiStepForm from './Components/MultiStepForm';
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState('home');
-
-  const handleStart = () => {
-    setCurrentScreen('bodyMeasurements');
-  };
-
-  const handleCapture = () => {
-    setCurrentScreen('additionalQuestions');
-  };
-
-  const handleNext = () => {
-    setCurrentScreen('emailCapture');
-  };
-
-  const handleGetResults = () => {
-    setCurrentScreen('results');
-  };
-
   return (
-    <div className="App">
-      {currentScreen === 'home' && <HomePage onStart={handleStart} />}
-      {currentScreen === 'bodyMeasurements' && <BodyMeasurements onCapture={handleCapture} />}
-      {currentScreen === 'additionalQuestions' && <AdditionalQuestions onNext={handleNext} />}
-      {currentScreen === 'emailCapture' && <EmailCapture onGetResults={handleGetResults} />}
-      {currentScreen === 'results' && <Results />}
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route 
+            path="/" 
+            element={<MultiStepForm title="Find Your Fit" subtitle="Get personalized size recommendations" />} 
+          />
+          <Route 
+            path="/:brand" 
+            element={<MultiStepForm />}  // No props passed here
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

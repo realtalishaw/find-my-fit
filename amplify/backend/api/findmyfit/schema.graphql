@@ -1,0 +1,58 @@
+type Recommendation @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  fit_confidence: String!
+  recommended_size: String!
+  brand: String
+  category: String
+  sub_category: String
+  garment_type: String
+  product_url: String
+  fabric_type: String
+  body_type: String
+}
+
+type RecommendationRequest @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  Measurements: Measurements @hasOne
+  fit_preference: String
+  product_url: String
+}
+
+type SizeEntry @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  sizechartID: ID! @index(name: "bySizeChart")
+  size: String!
+  measurements: [Int!]
+}
+
+type SizeChart @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  brand: String!
+  category: String
+  sub_category: String
+  SizeEntries: [SizeEntry] @hasMany(indexName: "bySizeChart", fields: ["id"])
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  email: String
+  Measurements: [Recommendation] @hasMany(indexName: "byUser", fields: ["id"])
+  RecommendationRequests: [Recommendation] @hasMany(indexName: "byUser", fields: ["id"])
+  Recommendations: [Recommendation] @hasMany(indexName: "byUser", fields: ["id"])
+}
+
+type Measurements @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  bust: String!
+  waist: String!
+  hips: String!
+  shoulder_width: String
+  left_thigh: String
+  left_arm: String
+  right_arm: String
+  height: String
+  weight: String
+}
